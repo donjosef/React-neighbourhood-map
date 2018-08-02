@@ -20,13 +20,18 @@ componentDidMount() {
     })
 }
 
-
-
+handleMarkerClick = (idx, position) => {
+    console.log(idx, position)
+    this.setState({
+        center: position
+    })
+}
   render() {
     return (
       <div className="App">
      
         <Map  
+            onMarkerClick={this.handleMarkerClick}
             center={this.state.center}
             places={this.state.places} 
             
