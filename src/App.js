@@ -5,7 +5,9 @@ import './App.css';
 
 class App extends Component {
     state = {
-        places: []
+        places: [], 
+        center: { lat: 40.78448, lng: 17.23618 },
+        selectedIndex: null
     }
 
 componentDidMount() {
@@ -18,11 +20,17 @@ componentDidMount() {
     })
 }
 
+
+
   render() {
     return (
       <div className="App">
      
-        <Map places={this.state.places}/>
+        <Map  
+            center={this.state.center}
+            places={this.state.places} 
+            
+        />
       </div>
     );
   }
