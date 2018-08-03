@@ -18,6 +18,7 @@ const CompositeMap = withGoogleMap(props => {
                     lng: place.venue.location.lng 
                 }}
                 onClick={ () => onMarkerClick(index, {lat: place.venue.location.lat, lng: place.venue.location.lng})}
+                animation= {window.google.maps.Animation.DROP }
                 
               >
                 {index === selectedIndex && (
@@ -28,7 +29,7 @@ const CompositeMap = withGoogleMap(props => {
                         }}
                         onCloseClick={closeWindow}>
 
-                        <InfoWindowContent />
+                        <InfoWindowContent id={place.venue.id}/>
                    </InfoWindow>
                  )}
 
