@@ -6,8 +6,9 @@ import './App.css';
 class App extends Component {
     state = {
         places: [], 
-        center: { lat: 40.78448, lng: 17.23618 },
-        selectedIndex: null
+        center: { lat: 40.78448, lng: 17.23618 }, //the initial center of the map
+        selectedIndex: null,
+        
     }
 
 componentDidMount() {
@@ -20,10 +21,12 @@ componentDidMount() {
     })
 }
 
+//when a marker is clicked, its  position is used to center the map to the new marker, and selectIndex is used to make sure the infoWindow is open on the right Marker
 handleMarkerClick = (idx, position) => {
     console.log(idx, position)
     this.setState({
-        center: position
+        center: position,
+        selectedIndex: idx
     })
 }
   render() {
@@ -31,6 +34,7 @@ handleMarkerClick = (idx, position) => {
       <div className="App">
      
         <Map  
+            selectedIndex={this.state.selectedIndex}
             onMarkerClick={this.handleMarkerClick}
             center={this.state.center}
             places={this.state.places} 
