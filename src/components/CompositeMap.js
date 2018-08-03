@@ -1,8 +1,9 @@
 import React from 'react'
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
+import InfoWindowContent from './InfoWindowContent'
 
 const CompositeMap = withGoogleMap(props => { 
-    const { places, center, onMarkerClick, selectedIndex, closeWindow, onGetDetails} = props;
+    const { places, center, onMarkerClick, selectedIndex, closeWindow} = props;
     
      return (
           <GoogleMap
@@ -16,10 +17,7 @@ const CompositeMap = withGoogleMap(props => {
                     lat: place.venue.location.lat,
                     lng: place.venue.location.lng 
                 }}
-                onClick={ () => {
-                    onMarkerClick(index, {lat: place.venue.location.lat, lng: place.venue.location.lng})
-                    onGetDetails(place.venue.id)
-                }}
+                onClick={ () => onMarkerClick(index, {lat: place.venue.location.lat, lng: place.venue.location.lng})}
                 
               >
                 {index === selectedIndex && (
@@ -30,7 +28,7 @@ const CompositeMap = withGoogleMap(props => {
                         }}
                         onCloseClick={closeWindow}>
 
-                        <h1>Content</h1>
+                        <InfoWindowContent />
                    </InfoWindow>
                  )}
 
