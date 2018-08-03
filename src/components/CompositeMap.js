@@ -2,7 +2,7 @@ import React from 'react'
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 const CompositeMap = withGoogleMap(props => { 
-    const { places, center, onMarkerClick, selectedIndex, closeWindow } = props;
+    const { places, center, onMarkerClick, selectedIndex, closeWindow, onGetDetails} = props;
     
      return (
           <GoogleMap
@@ -11,12 +11,16 @@ const CompositeMap = withGoogleMap(props => {
           >
             {places.map((place, index) => (
               <Marker 
-                onClick={ () => onMarkerClick(index, {lat: place.venue.location.lat, lng: place.venue.location.lng}) }
                 key={place.venue.id} 
                 position={{
                     lat: place.venue.location.lat,
                     lng: place.venue.location.lng 
                 }}
+                onClick={ () => {
+                    onMarkerClick(index, {lat: place.venue.location.lat, lng: place.venue.location.lng})
+                    onGetDetails(place.venue.id)
+                }}
+                
               >
                 {index === selectedIndex && (
                     <InfoWindow 
