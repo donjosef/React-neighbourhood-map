@@ -29,6 +29,13 @@ handleMarkerClick = (idx, position) => {
         selectedIndex: idx
     })
 }
+
+// Reset to null, otherwise the infowindow, if closed, will not open again on the same marker 
+handleCloseWindow = () => {
+    this.setState({
+        selectedIndex: null
+    })
+}
   render() {
     return (
       <div className="App">
@@ -38,6 +45,7 @@ handleMarkerClick = (idx, position) => {
             onMarkerClick={this.handleMarkerClick}
             center={this.state.center}
             places={this.state.places} 
+            closeWindow={this.handleCloseWindow}
             
         />
       </div>
