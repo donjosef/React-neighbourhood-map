@@ -20,10 +20,6 @@ componentDidMount() {
    })
 }
 
-handleGetDetails = (id) => {
-    PlacesDataAPI.getDetails(id)
-    .then(data => console.log(data))
-}
 
 //when a marker is clicked, its  position is used to center the map to the new marker, and selectIndex is used to make sure the infoWindow is open on the right Marker
 handleMarkerClick = (idx, position) => {
@@ -50,7 +46,6 @@ handleCloseWindow = () => {
             center={this.state.center}
             places={this.state.places} 
             closeWindow={this.handleCloseWindow}
-            onGetDetails={this.handleGetDetails}
             
         />
       </div>
