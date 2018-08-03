@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Map from './components/Map'
+import * as PlacesDataAPI from './PlacesDataAPI'
 import './App.css';
 
 class App extends Component {
@@ -12,13 +13,16 @@ class App extends Component {
     }
 
 componentDidMount() {
-    fetch(`https://api.foursquare.com/v2/venues/explore?near=alberobello,it&radius=50000&section=outdoors&limit=30&client_id=U1CLJ2FKP15TX4EIZEDOZSVJC2KJPKT4OBNEI3UDJRIINDCO&client_secret=CQF2S3FBWYRFED4RO0QUYLO4JH0TXUJ5PFK2F2OS1PJF1FA5&v=20180801`)
-    .then(res => res.json())
+   PlacesDataAPI.getPlaces()
     .then(data => {
-        const places = data.response.groups[0].items;
-        this.setState({ places })
-        
-    })
+       const places = data.response.groups[0].items;
+       this.setState({ places });
+   })
+}
+
+handleGetDetails = (id) => {
+    PlacesDataAPI.getDetails(id)
+    .then(data => console.log(data))
 }
 
 //when a marker is clicked, its  position is used to center the map to the new marker, and selectIndex is used to make sure the infoWindow is open on the right Marker
@@ -46,6 +50,7 @@ handleCloseWindow = () => {
             center={this.state.center}
             places={this.state.places} 
             closeWindow={this.handleCloseWindow}
+            onGetDetails={this.handleGetDetails}
             
         />
       </div>
