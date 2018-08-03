@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Map from './components/Map'
+import ListPlaces from './components/ListPlaces'
 import * as PlacesDataAPI from './PlacesDataAPI'
 import './App.css';
 
@@ -21,7 +21,7 @@ componentDidMount() {
 }
 
 
-//when a marker is clicked, its  position is used to center the map to the new marker, and selectIndex is used to make sure the infoWindow is open on the right Marker
+//when a marker is clicked, its  position is used to center the map to the new marker, and selectIndex is used to make sure the infoWindow is open on the right Marker. The same functionality is applied to list items when clicked
 handleMarkerClick = (idx, position) => {
     console.log(idx, position)
     this.setState({
@@ -39,7 +39,7 @@ handleCloseWindow = () => {
   render() {
     return (
       <div className="App">
-     
+        <ListPlaces places={this.state.places} onItemClick={this.handleMarkerClick}/>
         <Map  
             selectedIndex={this.state.selectedIndex}
             onMarkerClick={this.handleMarkerClick}
