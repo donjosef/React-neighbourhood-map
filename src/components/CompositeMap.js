@@ -2,7 +2,7 @@ import React from 'react'
 import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 const CompositeMap = withGoogleMap(props => { 
-    const { places, center, onMarkerClick, selectedIndex } = props;
+    const { places, center, onMarkerClick, selectedIndex, closeWindow } = props;
     
      return (
           <GoogleMap
@@ -23,7 +23,8 @@ const CompositeMap = withGoogleMap(props => {
                         position={{
                             lat: place.venue.location.lat, 
                             lng: place.venue.location.lng
-                        }}>
+                        }}
+                        onCloseClick={closeWindow}>
 
                         <h1>Content</h1>
                    </InfoWindow>
