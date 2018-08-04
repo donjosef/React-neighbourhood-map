@@ -6,9 +6,8 @@ class Map extends Component {
     
    render() {
 //       const { places, center, onMarkerClick, selectedIndex } = this.props; //from state of App.js
-       const className = this.props.menuOpen ? 'map-md' : 'map-lg'
        return(
-          <div className={className}>
+          <div className={'right-col ' + this.props.classOpen}>
            <Header onToggleMenu={this.props.onToggleMenu}/>
             <CompositeMap
               {...this.props}
