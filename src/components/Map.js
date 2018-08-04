@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CompositeMap from './CompositeMap'
+import Header from './Header'
 
 class Map extends Component {
     
@@ -8,9 +9,10 @@ class Map extends Component {
        
        return(
           <div className='map'>
+           <Header />
             <CompositeMap
               {...this.props}
-              containerElement={ <div style={{ height: `100vh`}} /> }
+              containerElement={ <main style={{ height: `100vh`}} /> }
               mapElement={ <div style={{ height: `100%` }} /> }
             />
           </div>
