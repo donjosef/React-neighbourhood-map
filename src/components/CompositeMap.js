@@ -10,32 +10,35 @@ const CompositeMap = withGoogleMap(props => {
             center = { center }
             defaultZoom = { 9 }
           >
-            {places.map((place, index) => (
-              <Marker 
-                key={place.venue.id} 
-                position={{
-                    lat: place.venue.location.lat,
-                    lng: place.venue.location.lng 
-                }}
-                onClick={ () => onMarkerClick(index, {lat: place.venue.location.lat, lng: place.venue.location.lng})}
-                animation= {window.google.maps.Animation.DROP }
-                
-              >
-                {index === selectedIndex && (
-                    <InfoWindow 
-                        position={{
-                            lat: place.venue.location.lat, 
-                            lng: place.venue.location.lng
-                        }}
-                        onCloseClick={closeWindow}>
+            {places.map((place, index) => {
+                let animation = index === selectedIndex ? window.google.maps.Animation.BOUNCE : null
 
-                        <InfoWindowContent id={place.venue.id}/>
-                   </InfoWindow>
-                 )}
-
-              </Marker>     
-
-            ))}
+              return ( 
+                    <Marker 
+                       key={place.venue.id} 
+                       position={{
+                           lat: place.venue.location.lat,
+                           lng: place.venue.location.lng 
+                       }}
+                       onClick={ () => onMarkerClick(index, {lat: place.venue.location.lat, lng: place.venue.location.lng})}
+                        animation={animation}
+                      
+                      >
+                       {index === selectedIndex && (
+                           <InfoWindow 
+                               position={{
+                                   lat: place.venue.location.lat, 
+                                   lng: place.venue.location.lng
+                               }}
+                               onCloseClick={closeWindow}>
+        
+                                <InfoWindowContent id={place.venue.id}/>
+                           </InfoWindow>
+                         )}
+        
+                      </Marker>     
+                )
+            })}
 
           </GoogleMap>
      )
