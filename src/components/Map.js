@@ -7,7 +7,7 @@ class Map extends Component {
 //       const { places, center, onMarkerClick, selectedIndex } = this.props; //from state of App.js
        
        return(
-          <div>
+          <div className='map'>
             <CompositeMap
               {...this.props}
               containerElement={ <div style={{ height: `100vh`}} /> }
