@@ -6,10 +6,10 @@ class Map extends Component {
     
    render() {
 //       const { places, center, onMarkerClick, selectedIndex } = this.props; //from state of App.js
-       
+       const className = this.props.menuOpen ? 'map-md' : 'map-lg'
        return(
-          <div className='map'>
-           <Header />
+          <div className={className}>
+           <Header onToggleMenu={this.props.onToggleMenu}/>
             <CompositeMap
               {...this.props}
               containerElement={ <main style={{ height: `100vh`}} /> }
@@ -20,4 +20,4 @@ class Map extends Component {
    }
 }
 
-export default Map;
+export default Map; 
