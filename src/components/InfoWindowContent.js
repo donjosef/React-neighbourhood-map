@@ -51,7 +51,7 @@ componentDidMount() {
               {selectedPlace.location.city && <p><strong>City</strong>: {selectedPlace.location.city}</p>}
                <p><strong>Latitude/Longitude</strong>: {selectedPlace.location.lat}-{selectedPlace.location.lng}</p>
                <p><strong>Rating</strong>: {selectedPlace.rating}</p>
-               <img src={foursquareAttributionUrl} className='foursquare-logo' alt='powered-by-foursquare' />
+               <img src={foursquareAttributionUrl} className='foursquare-logo-details' alt='powered-by-foursquare' />
              </div>
             )}
             {error && <p style={{color: 'red'}}><strong>Cannot load any place</strong></p>}
