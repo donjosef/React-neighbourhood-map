@@ -20,9 +20,11 @@
 }
 
 .sideBar {
-    width: 30%;
+    width: 25%;
     height: 100vh;
     overflow-y: scroll;
+    background-color: #2E3D49;
+    color: #c1c1c1;
 }
 .sideBar label {
     width: 100%;
@@ -32,14 +34,20 @@
     padding-left: 10px;
     padding-right: 10px;
     margin-top: 10px;
+    line-height: 2em;
 }
 .sideBar input {
     width: 100%;
     padding: 10px 12px;
     font-size: 1.1em;
 }
+
+.sideBar input::placeholder {
+    font-size: 0.8em;
+    
+}
 .map {
-    width: 70%;
+    width: 75%;
 }
 
 .listPlaces {
@@ -50,6 +58,10 @@
 .listPlaces li {
     padding: 15px 10px;
     cursor: pointer;
+}
+
+.listPlaces li:hover {
+    color: #fff;
 }
 
 .foursquare-logo-details {
