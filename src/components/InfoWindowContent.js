@@ -40,10 +40,9 @@ componentDidMount() {
             <div>
             {loaded && selectedPlace && (
              <div>
-              <img src={`${selectedPlace.bestPhoto.prefix}width500${selectedPlace.bestPhoto.suffix}`} />
                <h3>
                 <strong>Venue</strong>: 
-                <a href={`${selectedPlace.canonicalUrl}?ref=U1CLJ2FKP15TX4EIZEDOZSVJC2KJPKT4OBNEI3UDJRIINDCO`} 
+                <a href={`${selectedPlace.canonicalUrl}?ref=J3L43YMINNBWA0T4NKNPDOBRCTOPZL3XXZ052DDQVEDWLRKG`} 
                    target='_blank'>
                     {selectedPlace.name}
                 </a>
