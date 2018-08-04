@@ -1,11 +1,8 @@
 .App {
-  text-align: center;
+  display: flex;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+
 
 .App-header {
   background-color: #222;
@@ -22,7 +19,35 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.sideBar {
+    width: 30%;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.sideBar label {
+    width: 100%;
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+.sideBar input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1.1em;
+}
+.map {
+    width: 70%;
+}
+
+.listPlaces {
+    list-style: none;
+    padding: 0;
+}
+
+.listPlaces li {
+    padding: 15px 10px;
+    cursor: pointer;
 }
