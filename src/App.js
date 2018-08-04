@@ -56,8 +56,13 @@ handleCloseWindow = () => {
       <div className="App">
         <nav className='sideBar'>
           <label >
-             Filter Places you are interested in:
-             <input value={this.state.filterQuery} onChange={this.handleQueryChange} type='text'/>
+             Filter Places:
+             <input 
+                value={this.state.filterQuery} 
+                onChange={this.handleQueryChange} 
+                placeholder='Place Name' 
+                type='text'
+             />
           </label>
           <ListPlaces places={showingPlaces} onItemClick={this.handleMarkerClick}/>
         </nav>
