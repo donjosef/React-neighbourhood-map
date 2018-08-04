@@ -1,8 +1,16 @@
 .App {
   display: flex;
-    flex-wrap: wrap;
 }
 
+.right-col {
+    flex: 1;
+    transform: translate(0,0);
+    transition: transform .3s;
+}
+
+.right-col.open {
+  transform: translate(300px,0);
+}
 .header {
     color: #EA4335;
     background-color: #2E3D49;
@@ -38,7 +46,8 @@
 }
 
 .sideBar {
-    width: 25%;
+    width: 300px;
+    position: absolute;
     height: 100vh;
     overflow-y: scroll;
     background-color: #2E3D49;
@@ -64,13 +73,7 @@
     font-size: 0.8em;
     
 }
-.map-md {
-    width: 75%;
-}
 
-.map-lg {
-    width: 100%;
-}
 
 .listPlaces {
     list-style: none;
@@ -97,3 +100,35 @@
     margin-left: 10px;
     margin-bottom: 20px;
 }
+
+/*media query */
+
+@media screen and (max-width: 640px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .sideBar {
+        width: 280px;
+    }
+    
+    .right-col.open {
+      transform: translate(280px,0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
