@@ -9,7 +9,8 @@ class App extends Component {
         places: [], 
         center: { lat: 40.78448, lng: 17.23618 }, //the initial center of the map
         selectedIndex: null,
-        filterQuery: ''
+        filterQuery: '',
+        menuOpen: true
     }
 
 componentDidMount() {
@@ -42,8 +43,14 @@ handleCloseWindow = () => {
         selectedIndex: null
     })
 }
+
+handleToggleMenu = () => {
+    this.setState({
+        menuOpen: !this.state.menuOpen
+    })
+}
   render() {
-      const {filterQuery, places} = this.state;
+      const {filterQuery, places, menuOpen} = this.state;
       let showingPlaces;
       if(filterQuery) {
           const match = new RegExp(filterQuery, 'i');
@@ -54,19 +61,24 @@ handleCloseWindow = () => {
       
     return (
       <div className="App">
-        <nav className='sideBar'>
-          <label >
-             Filter Places:
-             <input 
-                value={this.state.filterQuery} 
-                onChange={this.handleQueryChange} 
-                placeholder='Place Name' 
-                type='text'
-             />
-          </label>
-          <ListPlaces places={showingPlaces} onItemClick={this.handleMarkerClick}/>
-        </nav>
+        
+        {menuOpen && (
+            <nav className='sideBar'>
+              <label >
+                 Filter Places:
+                 <input 
+                    value={this.state.filterQuery} 
+                    onChange={this.handleQueryChange} 
+                    placeholder='Place Name' 
+                    type='text'
+                 />
+              </label>
+              <ListPlaces places={showingPlaces} onItemClick={this.handleMarkerClick}/>
+            </nav>
+        )}
         <Map  
+            onToggleMenu={this.handleToggleMenu}
+            menuOpen={this.state.menuOpen}
             selectedIndex={this.state.selectedIndex}
             onMarkerClick={this.handleMarkerClick}
             center={this.state.center}
