@@ -9,7 +9,7 @@ class App extends Component {
         places: [], 
         center: { lat: 40.78448, lng: 17.23618 }, //the initial center of the map
         selectedIndex: null,
-        
+        filterQuery: ''
     }
 
 componentDidMount() {
@@ -18,6 +18,12 @@ componentDidMount() {
        const places = data.response.groups[0].items;
        this.setState({ places });
    })
+}
+
+handleQueryChange = (e) => {
+    this.setState({
+        filterQuery: e.target.value
+    })
 }
 
 
@@ -37,14 +43,29 @@ handleCloseWindow = () => {
     })
 }
   render() {
+      const {filterQuery, places} = this.state;
+      let showingPlaces;
+      if(filterQuery) {
+          const match = new RegExp(filterQuery, 'i');
+          showingPlaces = places.filter(place => match.test(place.venue.name));
+      } else {
+          showingPlaces = places;
+      }
+      
     return (
       <div className="App">
-        <ListPlaces places={this.state.places} onItemClick={this.handleMarkerClick}/>
+        <nav className='sideBar'>
+          <label >
+             Filter Places you are interested in:
+             <input value={this.state.filterQuery} onChange={this.handleQueryChange} type='text'/>
+          </label>
+          <ListPlaces places={showingPlaces} onItemClick={this.handleMarkerClick}/>
+        </nav>
         <Map  
             selectedIndex={this.state.selectedIndex}
             onMarkerClick={this.handleMarkerClick}
             center={this.state.center}
-            places={this.state.places} 
+            places={showingPlaces} 
             closeWindow={this.handleCloseWindow}
             
         />
