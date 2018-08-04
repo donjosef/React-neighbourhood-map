@@ -51,3 +51,15 @@
     padding: 15px 10px;
     cursor: pointer;
 }
+
+.foursquare-logo-details {
+    width: 200px;
+    border: 2px solid blue;
+    padding: 10px;
+}
+
+.foursquare-logo-list {
+    width: 200px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
