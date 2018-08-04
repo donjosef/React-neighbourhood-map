@@ -37,7 +37,13 @@ componentDidMount() {
             {loaded && selectedPlace && (
              <div>
               <img src={`${selectedPlace.bestPhoto.prefix}width500${selectedPlace.bestPhoto.suffix}`} />
-               <h3><strong>Venue</strong>: <a href={selectedPlace.canonicalUrl} target='_blank'>{selectedPlace.name}</a></h3>
+               <h3>
+                <strong>Venue</strong>: 
+                <a href={`${selectedPlace.canonicalUrl}?ref=U1CLJ2FKP15TX4EIZEDOZSVJC2KJPKT4OBNEI3UDJRIINDCO`} 
+                   target='_blank'>
+                    {selectedPlace.name}
+                </a>
+               </h3>
               {selectedPlace.location.city && <p><strong>City</strong>: {selectedPlace.location.city}</p>}
                <p><strong>Latitude/Longitude</strong>: {selectedPlace.location.lat}-{selectedPlace.location.lng}</p>
                <p><strong>Rating</strong>: {selectedPlace.rating}</p>
