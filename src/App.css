@@ -1,22 +1,17 @@
 .App {
   display: flex;
+    flex-wrap: wrap;
 }
 
-
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.header {
+    color: #EA4335;
+    background-color: #2E3D49;
+    text-align: center;
+    padding: 15px 0;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+.header h1 {
+    margin: 0;
 }
 
 .sideBar {
