@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import foursquareAttributionUrl from '../imgs/powered-by-foursquare-blue.png'
+import foursquareAttributionUrl from '../imgs/powered-by-foursquare-white.png'
 
 class ListPlaces extends Component {
     
@@ -18,7 +18,7 @@ class ListPlaces extends Component {
                      </li>
                     ))}
               </ul>
-              <img src={foursquareAttributionUrl} className='foursquare-logo-list'/>
+              <img src={foursquareAttributionUrl} className='foursquare-logo-list' alt='powered-by-foursquare'/>
             </div>
         )
     }
