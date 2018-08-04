@@ -59,24 +59,24 @@ handleToggleMenu = () => {
           showingPlaces = places;
       }
       
+      const classOpen = menuOpen ? 'open' : "";
+      
     return (
       <div className="App">
-        
-        {menuOpen && (
-            <nav className='sideBar'>
-              <label >
-                 Filter Places:
-                 <input 
-                    value={this.state.filterQuery} 
-                    onChange={this.handleQueryChange} 
-                    placeholder='Place Name' 
-                    type='text'
-                 />
-              </label>
-              <ListPlaces places={showingPlaces} onItemClick={this.handleMarkerClick}/>
-            </nav>
-        )}
+        <nav className='sideBar '>
+            <label >
+             Filter Places:
+                <input 
+                  value={this.state.filterQuery} 
+                  onChange={this.handleQueryChange} 
+                  placeholder='Place Name' 
+                  type='text'
+                />
+            </label>
+            <ListPlaces places={showingPlaces} onItemClick={this.handleMarkerClick}/>
+        </nav>
         <Map  
+            classOpen={classOpen}
             onToggleMenu={this.handleToggleMenu}
             menuOpen={this.state.menuOpen}
             selectedIndex={this.state.selectedIndex}
