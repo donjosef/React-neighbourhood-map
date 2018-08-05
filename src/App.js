@@ -10,8 +10,9 @@ class App extends Component {
         center: { lat: 40.78448, lng: 17.23618 }, //the initial center of the map
         selectedIndex: null,
         filterQuery: '',
-        menuOpen: true
+        menuOpen: false
     }
+
 
 componentDidMount() {
    PlacesDataAPI.getPlaces()
@@ -72,7 +73,7 @@ handleToggleMenu = () => {
                 <input 
                   value={this.state.filterQuery} 
                   onChange={this.handleQueryChange} 
-                  placeholder='Place Name' 
+                  placeholder='Enter a place name' 
                   type='text'
                 />
             </label>
