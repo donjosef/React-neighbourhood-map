@@ -13,8 +13,10 @@ class InfoWindowContent extends Component {
     }
 
 
-//this component is mounted after the click on marker. See CompositeMap around line 23
+//this component is mounted after the click on marker. See CompositeMap (the condition index === selectedIndex)
 componentDidMount() {
+    
+    //make a call to foursquare, pass in the id of the specific place, and wait for response.
     PlacesDataAPI.getDetails(this.props.id)
     .then(data => {
         console.log(data)
@@ -37,7 +39,7 @@ componentDidMount() {
         
     
         return ( 
-            <div>
+            <div className='iw-content'>
             {loaded && selectedPlace && (
              <div>
                <h3>
@@ -48,12 +50,13 @@ componentDidMount() {
                 </a>
                </h3>
               {selectedPlace.location.city && <p><strong>City</strong>: {selectedPlace.location.city}</p>}
-               <p><strong>Latitude/Longitude</strong>: {selectedPlace.location.lat}-{selectedPlace.location.lng}</p>
+               <p><strong>Latitude</strong>: {selectedPlace.location.lat}</p>
+               <p><strong>Longitude</strong>: {selectedPlace.location.lng}</p>
                <p><strong>Rating</strong>: {selectedPlace.rating}</p>
                <img src={foursquareAttributionUrl} className='foursquare-logo-details' alt='powered-by-foursquare' />
              </div>
             )}
-            {error && <p style={{color: 'red'}}><strong>Cannot load any place</strong></p>}
+            {error && <p style={{color: 'red'}}><strong>Something went wrong. Cannot load any place</strong></p>}
              
              
             </div>
