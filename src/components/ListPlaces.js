@@ -10,11 +10,11 @@ class ListPlaces extends Component {
             <div>
               <ul className='listPlaces'>
                   {places.map((place, idx) => (
-                    <li 
-                       key={place.venue.id} 
-                       onClick={() => onItemClick(idx, {lat: place.venue.location.lat, lng: place.venue.location.lng})}
-                      >
-                       {place.venue.name}
+                    <li key={place.venue.id} >
+                       <button 
+                        className='location-item'
+                        onClick={() => onItemClick(idx, {lat: place.venue.location.lat, lng: place.venue.location.lng})}>{place.venue.name}
+                       </button>
                      </li>
                     ))}
               </ul>
