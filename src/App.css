@@ -82,6 +82,11 @@
     font-size: 0.8em;
 }
 
+/*workaround for accessibility issues when menu is hidden*/
+.sideBar.closed {
+    visibility: hidden;
+    transition: visibility .4s;
+}
 
 .listPlaces {
     list-style: none;
