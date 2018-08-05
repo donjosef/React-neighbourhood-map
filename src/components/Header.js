@@ -3,7 +3,7 @@ import React from 'react'
 function Header(props) {
     return (
       <header className='header'>
-        <button onClick={props.onToggleMenu}>
+        <button aria-label='toggle menu' onClick={props.onToggleMenu}>
             <span></span>
             <span></span>
             <span></span>
