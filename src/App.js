@@ -59,11 +59,14 @@ handleToggleMenu = () => {
           showingPlaces = places;
       }
       
+      /*imitates the use of classList.toggle with js*/
       const classOpen = menuOpen ? 'open' : "";
+      const classClosed = menuOpen ? "" : "closed";
+      
       
     return (
       <div className="App">
-        <nav className='sideBar '>
+        <nav className={'sideBar ' + classClosed}>
             <label >
              Filter Places:
                 <input 
