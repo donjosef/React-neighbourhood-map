@@ -134,6 +134,13 @@
     }
 }
 
+/*important for infowindow */
+@media screen and (max-width: 530px) {
+    .iw-content {
+        max-width: 250px;
+    }
+}
+
 @media screen and (max-width: 380px) {
     .sideBar {
         width: 280px;
