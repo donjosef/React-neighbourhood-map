@@ -15,7 +15,7 @@
   transform: translate(300px,0);
 }
 .header {
-    color: #EA4335;
+    color: #e86c63;
     background-color: #2E3D49;
     display: flex;
     padding: 15px 0;
@@ -45,7 +45,7 @@
     height: 5px;
     margin-top: 5px;
     width: 100%;
-    background: #EA4335;
+    background: #e86c63;
 }
 
 
@@ -75,7 +75,7 @@
 }
 
 .sideBar input:focus {
-    outline: 3px solid #EA4335;
+    outline: 3px solid #e86c63;
 }
 
 .sideBar input::placeholder {
@@ -111,7 +111,7 @@
 }
 
 .location-item:focus {
-    outline: 3px solid #EA4335;
+    outline: 3px solid #e86c63;
 }
 
 .foursquare-logo-details {
