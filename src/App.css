@@ -2,12 +2,15 @@
   display: flex;
 }
 
+
+/*when menu is closed, flex 1 take the whole remained width, because the nav is removed from natural flow with pos absolute*/
 .right-col {
     flex: 1;
     transform: translate(0,0);
     transition: transform .3s;
 }
 
+/*when menu is opened, the map is nudged to right by 300px, the width of menu*/
 .right-col.open {
   transform: translate(300px,0);
 }
@@ -45,6 +48,8 @@
     background: #EA4335;
 }
 
+
+/*by having position absolute, is removed from natural flow*/
 .sideBar {
     width: 300px;
     position: absolute;
