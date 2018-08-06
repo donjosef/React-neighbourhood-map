@@ -5,9 +5,9 @@ const params = {
     radius: 50000,
     section: 'outdoors',
     limit: 30,
-    client_id: 'U1CLJ2FKP15TX4EIZEDOZSVJC2KJPKT4OBNEI3UDJRIINDCO',
-    client_secret: 'CQF2S3FBWYRFED4RO0QUYLO4JH0TXUJ5PFK2F2OS1PJF1FA5',
-    v: '200180801'
+    client_id: 'WWDRPRTQ5GYPZEHGGHTGXB421MQ2NOLZETFWG1TSNDRZCYJG',
+    client_secret: 'DJLCA325SMR5F2T4QAQRNXG4LKTDV4WHLM3R1G13DCO0MKLP',
+    v: '200180804'
 };
 
 Object.keys(params).forEach(key => apiExplore.searchParams.append(key, params[key]));
