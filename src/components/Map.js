@@ -11,7 +11,7 @@ class Map extends Component {
            <Header onToggleMenu={this.props.onToggleMenu}/>
             <CompositeMap
               {...this.props}
-              containerElement={ <main style={{ height: `calc(100vh - 80px)`}} /> }
+              containerElement={ <main style={{ height: `calc(100vh - 80px)`}} role='application'/> }
               mapElement={ <div style={{ height: `100%` }} /> }
             />
           </div>
