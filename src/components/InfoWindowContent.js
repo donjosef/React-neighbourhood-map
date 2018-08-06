@@ -44,7 +44,7 @@ componentDidMount() {
              <div>
                <h3>
                 <strong>Venue</strong>: 
-                <a href={`${selectedPlace.canonicalUrl}?ref=J3L43YMINNBWA0T4NKNPDOBRCTOPZL3XXZ052DDQVEDWLRKG`} 
+                <a href={`${selectedPlace.canonicalUrl}?ref=DJLCA325SMR5F2T4QAQRNXG4LKTDV4WHLM3R1G13DCO0MKLP`} 
                    target='_blank'>
                     {selectedPlace.name}
                 </a>
