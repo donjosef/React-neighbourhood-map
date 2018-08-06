@@ -139,6 +139,7 @@
     .iw-content {
         max-width: 250px;
     }
+
 }
 
 @media screen and (max-width: 380px) {
@@ -148,6 +149,11 @@
     
     .right-col.open {
       transform: translate(280px,0);
+    }
+    
+    
+    .iw-content {
+        max-width: 220px;
     }
 }
 
