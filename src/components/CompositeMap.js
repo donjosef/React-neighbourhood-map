@@ -22,8 +22,8 @@ const CompositeMap = withGoogleMap(props => {
                        }}
                        onClick={ () => onMarkerClick(index, {lat: place.venue.location.lat, lng: place.venue.location.lng})}
                         animation={animation}
-                      
                       >
+    {/*Check the index of the selected marker. If it is the index of the actual iteration, open the window */}
                        {index === selectedIndex && (
                            <InfoWindow 
                                position={{
