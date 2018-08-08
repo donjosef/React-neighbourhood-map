@@ -31,7 +31,7 @@ componentDidMount() {
             })
         }
     })
-    .catch(err => console.warn(err))
+    .catch(err => alert('Error while getting details of venue. The service is unreachable'))
 }
 
     render() {
