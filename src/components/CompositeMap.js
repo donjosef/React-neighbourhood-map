@@ -1,8 +1,8 @@
 import React from 'react'
-import { withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import InfoWindowContent from './InfoWindowContent'
 
-const CompositeMap = withGoogleMap(props => { 
+const CompositeMap = withScriptjs(withGoogleMap(props => { 
     const { places, center, onMarkerClick, selectedIndex, closeWindow} = props;
     
      return (
@@ -12,6 +12,7 @@ const CompositeMap = withGoogleMap(props => {
           >
             {places.map((place, index) => {
                 let animation = index === selectedIndex ? window.google.maps.Animation.BOUNCE : null
+                
 
               return ( 
                     <Marker 
@@ -45,6 +46,7 @@ const CompositeMap = withGoogleMap(props => {
      
      
      
-});
+}));
+
 
 export default CompositeMap
