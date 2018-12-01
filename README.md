@@ -1,4 +1,4 @@
-[Neighbourhood map project](http://donjosef.github.io/React-neighbourhood-map)
+# [Neighbourhood map project](http://donjosef.github.io/React-neighbourhood-map)
 
 ## Brief escription
 
